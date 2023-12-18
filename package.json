@@ -1,7 +1,11 @@
 {
   "name": "track-1-form-with-react-hook-form",
   "version": "0.1.0",
-  "private": true,
+  "private": "false",
+  "main": "dist/lib/index.js",
+  "types": "dist/index.d.ts",
+  "browser": "./browser/specific/main.js",
+  "exports": "./src/lib",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
@@ -40,5 +44,35 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "React Dynamic Forms is a comprehensive third-party library that extends the capabilities of React Hook Form,empowering you to effortlessly manage dynamic and interactive forms in your React applications. Seamlessly add, remove, and validate dynamic form fields with ease, thanks to intuitive hooks like useFormContextWithRef and useFormWithRef. Enhance user experience with the useDynamicFields hook, providing dynamic field locking, duplication checks, and more. The useRegisterWithRef hook facilitates efficient form registration with built-in support for handling input references. Level up your form-building experience with React Dynamic Forms.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Track-1/track-1-form-with-react-hook-form.git"
+  },
+  "author": "Track-1",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Track-1/track-1-form-with-react-hook-form/issues"
+  },
+  "keywords": [
+    "React",
+    "React Hook Form",
+    "Forms",
+    "Dynamic Forms",
+    "Form Validation",
+    "Form Management",
+    "React Library",
+    "Custom Hooks",
+    "useFormContextWithRef",
+    "useFormWithRef",
+    "useDynamicFields",
+    "useRegisterWithRef",
+    "Frontend Development",
+    "Web Development",
+    "User Experience",
+    "Dynamic Fields",
+    "Interactive Forms",
+    "Form Enhancements"
+  ]
 }
