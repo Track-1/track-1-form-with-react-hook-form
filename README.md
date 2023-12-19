@@ -105,15 +105,15 @@ npm i track-1-form-with-react-hook-form
 
 7. When dynamically adding or removing fields, you can use useDynamicFields.
 
-   |API|기능|params|
-   |------|---|---|
-   |handleKeyDownEnter|EnterKey 클릭 시 calllbackFn 실행|`e: React.KeyboardEvent<HTMLInputElement>, handleFieldCallbacks?: (() => void)[]`|
-   |checkFieldValueDuplicated|입력된 값이 다른 값들과 중복되는지 확인|`alertMessage?: string`|
-   |lockDynamicField|입력이 완료된 Field의 재입력을 막음||
-   |appendDynamicField|Field 추가|`fieldLimit?: number`|
-   |deleteDynamicField|Field 제거|`e: React.MouseEvent<T>, idx: number, appendNewFiled?: boolean`|
-   |activeField|Field의 lock을 해제||
-   |clickOutside|Field의 외부를 클릭했을 때 callbackFn 실행|` e: Event, ignoredTarget?: HTMLElement, handleFieldCallbacks?: (() => void)[]`|
+|API|기능|params|
+|------|---|---|
+|handleKeyDownEnter|EnterKey 클릭 시 calllbackFn 실행|`e: React.KeyboardEvent<HTMLInputElement>, handleFieldCallbacks?: (() => void)[]`|
+|checkFieldValueDuplicated|입력된 값이 다른 값들과 중복되는지 확인|`alertMessage?: string`|
+|lockDynamicField|입력이 완료된 Field의 재입력을 막음||
+|appendDynamicField|Field 추가|`fieldLimit?: number`|
+|deleteDynamicField|Field 제거|`e: React.MouseEvent<T>, idx: number, appendNewFiled?: boolean`|
+|activeField|Field의 lock을 해제||
+|clickOutside|Field의 외부를 클릭했을 때 callbackFn 실행|` e: Event, ignoredTarget?: HTMLElement, handleFieldCallbacks?: (() => void)[]`|
 
 
    
