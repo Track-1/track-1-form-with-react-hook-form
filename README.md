@@ -82,7 +82,7 @@ npm i track-1-form-with-react-hook-form
     }
    ```
 
-   6. When you need a ref, use instanceRef.
+6. When you need a ref, use instanceRef.
 
       ```js
          
@@ -103,7 +103,7 @@ npm i track-1-form-with-react-hook-form
         }
       ```
 
-      7. When dynamically adding or removing fields, you can use useDynamicFields.
+    7. When dynamically adding or removing fields, you can use useDynamicFields.
 
          |API|기능|params|
          |------|---|---|
