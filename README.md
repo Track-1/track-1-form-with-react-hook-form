@@ -103,7 +103,7 @@ npm i track-1-form-with-react-hook-form
         }
       ```
 
-    7. When dynamically adding or removing fields, you can use useDynamicFields.
+  7. When dynamically adding or removing fields, you can use useDynamicFields.
 
          |API|기능|params|
          |------|---|---|
