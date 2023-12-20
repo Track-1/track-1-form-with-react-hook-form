@@ -1,46 +1,120 @@
-# Getting Started with Create React App
+# Track-1-Form-with-react-hook-form
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Track-1의 form구현을 위한 react-hook-form의 서드파티 라이브러리
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **Create Register with Ref**: register 외부에서도 사용할 수 있는 ref를 반환하는 hook.
+- **Context Scope**: 기존의 useForm 반환값과 함게 register 외부에서도 사용할 수 있는 ref와 register를 반환하는 hook.
+- **Form with Ref**: 기존의 useContext 반환값과 함게 register 외부에서도 사용할 수 있는 ref와 register를 반환하는 hook.
+- **Form Context with Ref**: 유효한 범위에서 useFormContext를 사용할 수 있도록 하는 hook.
 
-### `npm start`
+## Installation
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```bash
+npm i track-1-form-with-react-hook-form
+```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Usage
 
-### `npm test`
+1. Install React-hook-form ( This library should be accompanied by the installation of React Hook Form. )
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+  ```bash
+  npm i react-hook-form
+  ```
 
-### `npm run build`
+2. import track-1-form-with-react-hook-form
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+   ```js
+   import {} from "track-1-form-with-react-hook-form"
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+3. If you want to use useForm, use useFormWithRef.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+  ```js
+  const {registerWithRef, instancRef, ...methods} = useFormWithRef({});
+  ```
 
-### `npm run eject`
+4. If you want to use useFormContext, use useFormContextWithRef.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+   ```js
+    const {registerWithRef, instancRef, ...methods} = useFormContextWithRef();
+   ```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+5. Connect with your UI
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+   ```js
+   function Component() {
+    const { instanceRef, registerWithRef, ...methods } = useFormWithRef({
+    defaultValues: {
+      test1: ""
+    },
+    });
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+    const handleOnchange = () => {
+      console.log("hi")
+    }
 
-## Learn More
+      return (
+        <form>
+          <input {...registerWithRef("test1", {
+            onChange : handleOnchange
+          })}/>
+        </form>
+      )
+    }
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+   
+   function Component() {
+    const { instanceRef, registerWithRef, ...methods } = useFormContextWithRef();
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+    const handleOnchange = () => {
+      console.log("hi")
+    }
+
+      return (
+        <form>
+          <input {...registerWithRef("test2", {
+            onChange : handleOnchange
+          })}/>
+        </form>
+      )
+    }
+   ```
+
+6. When you need a ref, use instanceRef.
+
+      ```js
+         
+       function Component() {
+        const { instanceRef, registerWithRef, ...methods } = useFormContextWithRef();
+
+        useEffect(() => {
+          if (instanceRef.current) {
+            instanceRef.current.focus();
+          }
+        }, []);
+
+          return (
+            <form>
+              <input {...registerWithRef("test2")}/>
+            </form>
+          )
+        }
+      ```
+
+7. When dynamically adding or removing fields, you can use useDynamicFields.
+
+|API|기능|params|
+|------|---|---|
+|handleKeyDownEnter|EnterKey 클릭 시 calllbackFn 실행|`e: React.KeyboardEvent<HTMLInputElement>, handleFieldCallbacks?: (() => void)[]`|
+|checkFieldValueDuplicated|입력된 값이 다른 값들과 중복되는지 확인|`alertMessage?: string`|
+|lockDynamicField|입력이 완료된 Field의 재입력을 막음||
+|appendDynamicField|Field 추가|`fieldLimit?: number`|
+|deleteDynamicField|Field 제거|`e: React.MouseEvent<T>, idx: number, appendNewFiled?: boolean`|
+|activeField|Field의 lock을 해제||
+|clickOutside|Field의 외부를 클릭했을 때 callbackFn 실행|` e: Event, ignoredTarget?: HTMLElement, handleFieldCallbacks?: (() => void)[]`|
+
+
+   
+
