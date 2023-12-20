@@ -1,6 +1,6 @@
 {
   "name": "track-1-form-with-react-hook-form",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "private": false,
   "main": "dist/lib/index.js",
   "types": "dist/index.d.ts",
