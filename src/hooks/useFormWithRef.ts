@@ -1,8 +1,8 @@
 import { FieldValues, useForm } from "react-hook-form";
 import { useRegisterWithRef } from "./useRegisterWithRef";
 
-export default function useFormWithRef<TFieldValues extends FieldValues>(
-  fieldValues: TFieldValues
+export default function useFormWithRef<TFieldValues extends FieldValues = {}>(
+  fieldValues?: TFieldValues
 ) {
   const methods = useForm<TFieldValues>(fieldValues);
   const { register } = methods;
