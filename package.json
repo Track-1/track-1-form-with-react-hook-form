@@ -1,7 +1,7 @@
 {
   "name": "track-1-form-with-react-hook-form",
-  "version": "0.1.0",
-  "private": "false",
+  "version": "0.1.1",
+  "private": false,
   "main": "dist/lib/index.js",
   "types": "dist/index.d.ts",
   "browser": "./browser/specific/main.js",
@@ -74,5 +74,7 @@
     "Dynamic Fields",
     "Interactive Forms",
     "Form Enhancements"
-  ]
+  ],
+  "homepage": "https://github.com/Track-1/track-1-form-with-react-hook-form#readme",
+  "devDependencies": {}
 }
