@@ -1,10 +1,10 @@
-import { FieldValues, useForm } from "react-hook-form";
+import { FieldValues, useForm, UseFormProps } from "react-hook-form";
 import { useRegisterWithRef } from "./useRegisterWithRef";
 
 export default function useFormWithRef<TFieldValues extends FieldValues = {}>(
-  fieldValues?: TFieldValues
+  formProps?: UseFormProps<TFieldValues>
 ) {
-  const methods = useForm<TFieldValues>(fieldValues);
+  const methods = useForm<TFieldValues>(formProps);
   const { register } = methods;
 
   const { registerWithRef, instanceRef } =
