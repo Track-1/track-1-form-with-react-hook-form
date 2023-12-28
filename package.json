@@ -1,9 +1,9 @@
 {
   "name": "track-1-form-with-react-hook-form",
-  "version": "0.1.2",
+  "version": "0.1.9",
   "private": false,
   "main": "dist/lib/index.js",
-  "types": "dist/index.d.ts",
+  "types": "dist/lib/index.d.ts",
   "browser": "./browser/specific/main.js",
   "exports": "./src/lib",
   "dependencies": {
@@ -25,7 +25,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "prepare": "rm -rf dist && mkdir dist && tsc"
   },
   "eslintConfig": {
     "extends": [
